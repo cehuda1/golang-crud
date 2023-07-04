@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Golang CRUD</title>
+
+    <style>
+        .container {
+            max-width: 550px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h3>Tambah Data User</h3>
+        <a href="/user" class="btn btn-sm btn-primary">Kembali</a>
+        <hr />
+
+        {{ if .pesan }}
+        <div class="alert alert-success">
+            {{ .pesan }}
+        </div>
+        {{ end }}
+
+        <form action="/user/add" method="post">
+            <div class="form-group">
+                <label for="">Nama Lengkap</label>
+                <input type="text" name="nama_lengkap" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="">Usia</label>
+                <input type="text" name="usia" class="form-control" required aria-required="true" aria-invalid="true">
+            </div>
+            <div class="form-group">
+                <label for="">Jenis Kelamin</label>
+                <select name="jenis_kelamin" class="form-control">
+                    <option value="">Pilih Jenis Kelamin</option>
+                    <option value="1">Laki - Laki</option>
+                    <option value="2">Perempuan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Alamat</label>
+                <textarea type="text" name="alamat" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="">Nomor Hp</label>
+                <input type="text" name="no_hp" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="">Tanggal Lahir</label>
+                <input type="date" name="tanggal_lahir" class="form-control">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">SIMPAN</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
